@@ -3,17 +3,6 @@
  */
 package linter;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.WeatherAnalyzer;
-import java.util.HashSet;
-import java.util.StringBuilder;
-
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -24,36 +13,7 @@ public class App {
     }
 }
 
-public class WeatherAnalyzer {
-    public static String analyzeWeatherData(int[][] weeklyMonthTemperatures) {
-        int minTemp = Integer.MAX_VALUE;
-        int maxTemp = Integer.MIN_VALUE;
-        HashSet<Integer> uniqueTemps = new HashSet<>();
-
-        for (int[] weekTemps : weeklyMonthTemperatures) {
-            for (int temp : weekTemps) {
-                uniqueTemps.add(temp);
-                if (temp < minTemp) {
-                    minTemp = temp;
-                }
-                if (temp > maxTemp) {
-                    maxTemp = temp;
-                }
-            }
-        }
-
-        StringBuilder sb = new StringBuilder();
-        for (int temp = minTemp; temp <= maxTemp; temp++) {
-            if (!uniqueTemps.contains(temp)) {
-                sb.append("Never saw temperature: ").append(temp).append("\n");
-            }
-        }
-
-        return "High: " + maxTemp + "Low: " + minTemp + "n" + sb.toString();
-    }
-}
-
-public class WeatherAnalyzerTest {
+class WeatherAnalyzerTest {
     public static void main(String[] args) {
         int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60},
@@ -62,7 +22,7 @@ public class WeatherAnalyzerTest {
                 {65, 56, 55, 52, 55, 62, 57}
         };
 
-        String expectedOutput = {'High: 72' + 'Low: 51' + 'Never saw temperature: 63' + 'Never saw temperature: 67' + 'Never saw temperature: 68' + 'Never saw temperature: 69'};
+        String[] expectedOutput = new String[]{"High: 72" + "Low: 51" + "Never saw temperature: 63" + "Never saw temperature: 67" + "Never saw temperature: 68" + "Never saw temperature: 69"};
 
         String actualOutput = WeatherAnalyzer.analyzeWeatherData(weeklyMonthTemperatures);
 
@@ -73,5 +33,33 @@ public class WeatherAnalyzerTest {
             System.out.println("Expected output" + expectedOutput);
             System.out.println("Actual output" + actualOutput);
         }
+
+    public class Tally {
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Enter the number of Votes");
+            arrayList<Integer> votes = new ArrayList<Integer>();
+            List<String> votes = new ArrayList<>();
+            votes.add("Bush");
+            votes.add("Bush");
+            votes.add("Bush");
+            votes.add("Shrub");
+            votes.add("Hedge");
+            votes.add("Shrub");
+            votes.add("Bush");
+            votes.add("Hedge");
+            votes.add("Bush");
+
+            String winner = tally(votes);
+            System.out.println(winner + " received the most votes!");
+
+            for (int i = 0; i < votes.size(); i++) {
+                votes.add(input.nextInt());
+            }
+        }
+
+
+    }
+
     }
 }
