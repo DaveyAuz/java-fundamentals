@@ -3,13 +3,64 @@
  */
 package basiclibrary;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void someLibraryMethodReturnsTrue() {
-        Library classUnderTest = new Library();
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
-
+    @Test
+    @DisplayName("Rolling Five Dice")
+    void rollFiveDice() {
+        Library sut = new Library();
+        int[] results = sut.roll(5);
+        System.out.println("Rolling Dice: " + Arrays.toString(results));
+        assertEquals(5, results.length);
     }
+
+    @Test
+    @DisplayName("Contains Duplicates")
+    void cointainsDuplicates() {
+        Library sut = new Library();
+        int[] arr = new int[]{1, 2, 2, 3, 4, 5};
+        boolean results = sut.containsDuplicates(arr);
+        System.out.println("Contains Duplicates: " + results);
+        assertTrue(results);
+    }
+    @Test
+    @DisplayName("Does NOT Contain Duplicates")
+    void doesNotCointainDuplicates() {
+        Library sut = new Library();
+        int[] arr = new int[]{1, 2, 3, 4, 5};
+        boolean results = sut.containsDuplicates(arr);
+        System.out.println("Does Not Contain Duplicates: " + results);
+        assertFalse(results);
+    }
+    @Test
+    @DisplayName("Average Function")
+    void testAverageFunction() {
+        Library sut = new Library();
+        int[] arr = new int[]{25, 42, 34, 69, 100, 83, 12, 37, 55};
+        double average = sut.average(arr);
+        System.out.println("Average Value: " + average);
+        assertEquals(50.78, average);
+    }
+
+    @Test
+    @DisplayName("Lowest Average")
+    void testLowestMonthlyTemp(){
+    Library sut = new Library();
+    int[][] weeklyMonthTemperatures = {
+            {66, 64, 58, 65, 71, 57, 60},
+            {57, 65, 65, 70, 72, 65, 51},
+            {55, 54, 60, 53, 59, 57, 61},
+            {65, 56, 55, 52, 55, 62, 57}
+    };
+    int[] lowestMonthlyTemp = sut.lowestAverage(weeklyMonthTemperatures);
+    System.out.println(Arrays.toString(lowestMonthlyTemp));
+    assert (lowestMonthlyTemp == weeklyMonthTemperatures[2]);
 }
+}
+
