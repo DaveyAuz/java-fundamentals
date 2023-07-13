@@ -3,25 +3,27 @@
  */
 package basiclibrary;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Library {
 
     public int[] roll(int n) {
-        Random
-
+        Random rand = new Random();
+        int[] results = new int[n];
 
         for (int i = 0; i < n; i++) {
-            rolls[i] = random.nextInt(6) + 1;
+            int diceRoll = rand.nextInt(6) + 1;
+            results[i] = diceRoll;
         }
-        return rolls;
+        return results;
+    }
 
-
-        public boolean containsDuplicates ( int[] arr){
-            for (int i = 0; i < Arr.length - 1; i++) {
-                for (int j = i + 1; j < arr.length; j++) {
-                    if (arr[i] == arr[j])
-                        return true;
+    public boolean containsDuplicates(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    return true;
                 }
             }
         }
@@ -30,27 +32,30 @@ public class Library {
 
     public double average(int[] arr) {
         int total = 0;
-        for (int i = 0; i < Arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             total = total + arr[i];
         }
-        return (double) total / (double) Arr.length
+        double average = (double) total / arr.length;
+        DecimalFormat df = new DecimalFormat("#.##");
+        String formatedString = df.format(average);
+        return Double.parseDouble(formatedString);
+
     }
 
-    public int[] lowestAverage(int[][] Arrays))
-
-    {
-        int minIndex = 0;
+    public int[] lowestAverage(int[][] Arrays) {
         double minAverage = Double.MAX_VALUE;
-        ;
-        For( int i = 0;
-        i < Arrays.length;
-        i++){
-        if (average(Arrays[i]) < minAverage) {
-            minIndex = i;
-            minAverage = average(Arrays[i]);
+        int[] lowArray = Arrays[0];
+        for (int i = 0; i < Arrays.length; i++) {
+            double sum = 0;
+            for (int j = 0; j < Arrays[i].length; j++) {
+                sum += Arrays[i][j];
+            }
+            double currentAverage = sum / Arrays[i].length;
+            if (currentAverage < minAverage) {
+                minAverage = currentAverage;
+                lowArray = Arrays[i];
+            }
         }
+        return lowArray;
     }
-        return Arrays[minIndex];
-    }
-
 }
