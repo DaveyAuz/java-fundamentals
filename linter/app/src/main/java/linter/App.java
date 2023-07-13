@@ -4,9 +4,6 @@
 package linter;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
@@ -34,32 +31,32 @@ class WeatherAnalyzerTest {
             System.out.println("Actual output" + actualOutput);
         }
 
-    public class Tally {
-        public static void main(String[] args) {
-            Scanner input = new Scanner(System.in);
-            System.out.print("Enter the number of Votes");
-            arrayList<Integer> votes = new ArrayList<Integer>();
-            List<String> votes = new ArrayList<>();
-            votes.add("Bush");
-            votes.add("Bush");
-            votes.add("Bush");
-            votes.add("Shrub");
-            votes.add("Hedge");
-            votes.add("Shrub");
-            votes.add("Bush");
-            votes.add("Hedge");
-            votes.add("Bush");
+        class Tally {
+            public static void main(String[] args) {
+                Scanner input = new Scanner(System.in);
+                System.out.print("Enter the number of Votes");
+                arrayList<Integer> votes = new ArrayList<Integer>();
+                List<String> votes = new ArrayList<>();
+                votes.add("Bush");
+                votes.add("Bush");
+                votes.add("Bush");
+                votes.add("Shrub");
+                votes.add("Hedge");
+                votes.add("Shrub");
+                votes.add("Bush");
+                votes.add("Hedge");
+                votes.add("Bush");
 
-            String winner = tally(votes);
-            System.out.println(winner + " received the most votes!");
+                String winner = tally(votes);
+                System.out.println(winner + " received the most votes!");
 
-            for (int i = 0; i < votes.size(); i++) {
-                votes.add(input.nextInt());
+                for (int i = 0; i < votes.size(); i++) {
+                    votes.add(input.nextInt());
+                }
             }
+
+
         }
-
-
-    }
 
     }
 }
