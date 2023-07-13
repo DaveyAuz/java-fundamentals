@@ -3,8 +3,54 @@
  */
 package basiclibrary;
 
+import java.util.Random;
+
 public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+
+    public int[] roll(int n) {
+        Random
+
+
+        for (int i = 0; i < n; i++) {
+            rolls[i] = random.nextInt(6) + 1;
+        }
+        return rolls;
+
+
+        public boolean containsDuplicates ( int[] arr){
+            for (int i = 0; i < Arr.length - 1; i++) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[i] == arr[j])
+                        return true;
+                }
+            }
+        }
+        return false;
     }
+
+    public double average(int[] arr) {
+        int total = 0;
+        for (int i = 0; i < Arr.length; i++) {
+            total = total + arr[i];
+        }
+        return (double) total / (double) Arr.length
+    }
+
+    public int[] lowestAverage(int[][] Arrays))
+
+    {
+        int minIndex = 0;
+        double minAverage = Double.MAX_VALUE;
+        ;
+        For( int i = 0;
+        i < Arrays.length;
+        i++){
+        if (average(Arrays[i]) < minAverage) {
+            minIndex = i;
+            minAverage = average(Arrays[i]);
+        }
+    }
+        return Arrays[minIndex];
+    }
+
 }
