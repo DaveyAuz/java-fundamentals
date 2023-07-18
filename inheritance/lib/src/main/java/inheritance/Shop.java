@@ -3,10 +3,10 @@ package inheritance;
 import java.util.ArrayList;
 
 public class Shop {
-    priate String
+    priate String;
     name;
     private String description;
-    Private String
+    Private String;
     priceCategory;
     private ArrayList<Review> reviews;
 
@@ -27,9 +27,11 @@ public class Shop {
 
     //Update stars
 
-    privatre
+    private void updateStars() {
 
-    void updateStars() {
+
+
+{
         int totalStars = 0;
         for (Review review : reviews) {
             totalStars += review.getStars();
@@ -47,7 +49,7 @@ public class Shop {
                 "" + ", stars=" +
                 stars +
                 ", priceCategory=" +
-                priceCategory "
-
-
+                priceCategory; "
+            }
+        }
     }
