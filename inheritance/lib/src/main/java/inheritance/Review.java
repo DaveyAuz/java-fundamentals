@@ -18,7 +18,7 @@ public class Review {
 
     public class Restaurant {
         private String name;
-        private int stars
+        private int stars;
         private int priceCategory;
         private List<Review> reviews = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class Review {
                     System.out.println("Review already exists");
                 }
             }
-            private void updateStarRating () {
+            private void updateStarRating() {
                 for (Review review : reviews) {
                     review.setStars(review.getStars() + 1);
                 }
