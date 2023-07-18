@@ -15,21 +15,26 @@ public class Restaurant {
         return name + " - " + stars + " Stars - " + getPriceCategoryString();
         //return name + " - " + stars + " Stars";
     }
+
     public int getPriceCategory() {
         return priceCategory;
     }
+
     public void setPriceCategory(int priceCategory) {
         this.priceCategory = priceCategory;
         System.out.println("Price Category set to " + priceCategory);
     }
+
     public int getStars() {
         return stars;
         //return stars;
     }
+
     public void setStars(int stars) {
         this.stars = stars;
         System.out.println("Stars set to " + stars);
     }
+
     public String getPriceCategoryString() {
         switch (priceCategory) {
             case 2:
@@ -39,6 +44,7 @@ public class Restaurant {
                 return "Free";
         }
     }
+
     @Override
     public String toString() {
         return "Restaurant{" +
@@ -46,7 +52,7 @@ public class Restaurant {
                 ", stars=" + stars +
                 ", priceCategory=" + priceCategory +
                 '}';
-        //return name + " - " + stars + " Stars - " + getPriceCategoryString();
-        //return name + " - " + stars + " Stars";
+        return name + " - " + stars + " Stars - " + getPriceCategoryString();
+        return name + " - " + stars + " Stars";
     }
 }

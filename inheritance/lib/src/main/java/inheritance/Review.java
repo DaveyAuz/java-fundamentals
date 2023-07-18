@@ -62,7 +62,6 @@ public class Review {
         }
     }
 
-
     public String toString() {
         return author + " rated " + stars + " stars: " + body + " ";
     }
