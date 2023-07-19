@@ -62,8 +62,11 @@ public class Review {
         }
     }
 
+    // ***GETTERS AND SETTERS
+
     public String toString() {
-        return author + " rated " + stars + " stars: " + body + " ";
+
+        return author.toString() + " rated " + stars + " stars: " + body + " ";
     }
 
     public String getBody() {

@@ -3,7 +3,7 @@ package inheritance;
 import java.util.ArrayList;
 
 public class Shop {
-    priate String;
+    private toString();
     name;
     private String description;
     Private String;
